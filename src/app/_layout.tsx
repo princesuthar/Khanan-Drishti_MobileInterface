@@ -5,6 +5,7 @@ import { useColorScheme } from 'react-native';
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
 import { AppErrorBoundary } from '@/components/feedback/AppErrorBoundary';
 import { AppProviders } from '@/providers/AppProviders';
+import { InspectionDraftProvider } from '@/providers/InspectionDraftProvider';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -13,10 +14,12 @@ export default function TabLayout() {
   return (
     <AppErrorBoundary>
       <AppProviders>
-        <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-          <AnimatedSplashOverlay />
-          <Stack screenOptions={{ headerShown: false }} />
-        </ThemeProvider>
+        <InspectionDraftProvider>
+          <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+            <AnimatedSplashOverlay />
+            <Stack screenOptions={{ headerShown: false }} />
+          </ThemeProvider>
+        </InspectionDraftProvider>
       </AppProviders>
     </AppErrorBoundary>
   );

@@ -78,6 +78,47 @@
 - Dashboard values and alerts are mock data.
 - Quick action destinations are placeholders until their feature phases begin.
 
+## Phase 4 - 2026-09-24
+
+### Features completed
+
+- Implemented the complete local digital inspection flow from dashboard to submission.
+- Added site and inspection-type selection.
+- Added five inspection types and generated checklists.
+- Added PASS, FAIL, and NOT APPLICABLE responses.
+- Added optional failure comment, severity, and photo placeholder.
+- Added notes, review, and local submission confirmation screens.
+- Added mandatory checklist completion validation.
+- Added local inspection persistence.
+
+### Files changed
+
+- `src/types/inspection.ts`
+- `src/storage/inspections.ts`
+- `src/providers/InspectionDraftProvider.tsx`
+- `src/app/start-inspection.tsx`
+- `src/app/select-inspection-type.tsx`
+- `src/app/inspection-checklist.tsx`
+- `src/app/inspection-notes.tsx`
+- `src/app/inspection-review.tsx`
+- `src/app/inspection-submitted.tsx`
+- `src/app/(app)/_layout.tsx`
+- `docs/08-field-inspection.md`
+- `docs/12-checklists.md`
+- `docs/CHANGELOG.md`
+
+### Tests performed
+
+- TypeScript validation passed.
+- Lint validation passed.
+- Android bundle validation is required after the final documentation pass.
+- All five inspection types and validation scenarios are documented in `docs/08-field-inspection.md`.
+
+### Known issues
+
+- Checklist content and submitted records are mock/local data.
+- Camera and GPS are intentionally not implemented.
+
 ## Post-Phase 2 Fix - 2026-09-24
 
 ### Fixed
